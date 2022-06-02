@@ -1,0 +1,21 @@
+3d worldbuilder
+
+MUST
+Door de wereld heen lopen / vliegen
+Verplaatsen en plaatsen van items in de wereld
+Laden van polygons
+Lichten verplaatsen
+Bewegende zon
+Globale tijd (instelbaar)
+
+SHOULD
+Heightmap landscape reading
+Advanced rendering
+Fog
+Alpha blending
+Werelden naar bestanden schrijven
+
+COULD
+Meshes editen
+Dynamisch objecten laden
+Edit mode en view mode
