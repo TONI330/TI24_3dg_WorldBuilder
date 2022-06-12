@@ -1,8 +1,8 @@
-#include "FpsCam.h"
+#include "FpCam.h"
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
-FpsCam::FpsCam(GLFWwindow* window)
+FpCam::FpCam(GLFWwindow* window)
 {
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	if (glfwRawMouseMotionSupported())
@@ -10,7 +10,7 @@ FpsCam::FpsCam(GLFWwindow* window)
 }
 
 
-glm::mat4 FpsCam::getMatrix()
+glm::mat4 FpCam::getMatrix()
 {
 	glm::mat4 ret(1.0f);
 	ret = glm::rotate(ret, rotation.x, glm::vec3(1, 0, 0));
@@ -19,14 +19,14 @@ glm::mat4 FpsCam::getMatrix()
 	return ret;
 }
 
-void FpsCam::move(float angle, float fac)
+void FpCam::move(float angle, float fac)
 {
 	position.x += (float)cos(rotation.y + glm::radians(angle)) * fac;
 	position.z += (float)sin(rotation.y + glm::radians(angle)) * fac;
 }
 
 
-void FpsCam::update(GLFWwindow* window)
+void FpCam::update(GLFWwindow* window)
 {
 	double x, y;
 	glfwGetCursorPos(window, &x, &y);

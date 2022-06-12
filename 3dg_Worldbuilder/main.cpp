@@ -3,10 +3,11 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "tigl.h"
-#include "FpsCam.h"
+#include "FpCam.h"
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include "stb_image.h"
+#include "World.h"
 using tigl::Vertex;
 
 #pragma comment(lib, "glfw3.lib")
@@ -18,7 +19,9 @@ using tigl::Vertex;
 
 GLFWwindow* window;
 
-FpsCam* camera;
+FpCam* camera;
+World* world;
+
 double lastTime = 0;
 
 glm::mat4 cubeModel;
@@ -123,14 +126,12 @@ void drawCube(int textureIndex, glm::vec3 pos, int size = 1)
 
 
 void init();
-void update();
 void draw();
 
 int main(void)
 {
     if (!glfwInit())
         throw "Could not initialize glwf";
-    int count;
     window = glfwCreateWindow(1000, 800, "Hello World", NULL, NULL);
     if (!window)
     {
@@ -139,65 +140,59 @@ int main(void)
     }
     glfwMakeContextCurrent(window);
 
-    tigl::init();
-
-    init();
+    tigl::init(); // Initialize shader
+    init(); // Initialize world
 
 	while (!glfwWindowShouldClose(window))
 	{
-		update();
-		draw();
+        world->UpdateWorld();
+        world->DrawWorld();
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
-
 	glfwTerminate();
-
-
     return 0;
 }
 
 void init()
 {
 
-    int value[10];
-    glGetIntegerv(GL_MAX_TEXTURE_SIZE, value);
+ //   int value[10];
+ //   glGetIntegerv(GL_MAX_TEXTURE_SIZE, value);
     glfwSetKeyCallback(window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
     {
         if (key == GLFW_KEY_ESCAPE)
             glfwSetWindowShouldClose(window, true);
     });
-    camera = new FpsCam(window);
 
-    cubeModel = glm::mat4(1.0f);
+    camera = new FpCam(window);
+    world = new World(*window, *camera);
+ //   camera = new FpCam(window);
 
-    unsigned int textureId;
-    glGenTextures(1, &textureId);
-    glBindTexture(GL_TEXTURE_2D, textureId);
+ //   cubeModel = glm::mat4(1.0f);
 
-    int width, height, bpp;
-	unsigned char* imgData = stbi_load("textures/minecraft_atlas.png", &width, &height, &bpp, 4);
+ //   unsigned int textureId;
+ //   glGenTextures(1, &textureId);
+ //   glBindTexture(GL_TEXTURE_2D, textureId);
 
-    glTexImage2D(GL_TEXTURE_2D,
-        0,		//level
-        GL_RGBA,		//internal format
-        512,		//width
-        512,		//height
-        0,		//border
-        GL_RGBA,		//data format
-        GL_UNSIGNED_BYTE,	//data type
-        imgData);		//data
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+ //   int width, height, bpp;
+	//unsigned char* imgData = stbi_load("textures/minecraft_atlas.png", &width, &height, &bpp, 4);
 
-    glBindTexture(GL_TEXTURE_2D, textureId);
-    fillMap();
-}
+ //   glTexImage2D(GL_TEXTURE_2D,
+ //       0,		//level
+ //       GL_RGBA,		//internal format
+ //       512,		//width
+ //       512,		//height
+ //       0,		//border
+ //       GL_RGBA,		//data format
+ //       GL_UNSIGNED_BYTE,	//data type
+ //       imgData);		//data
+ //   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+ //   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-
-void update()
-{
-    camera->update(window);
+ //   glBindTexture(GL_TEXTURE_2D, textureId);
+ //   fillMap();
+    
 
 }
 

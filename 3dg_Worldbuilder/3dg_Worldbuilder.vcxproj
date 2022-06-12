@@ -155,14 +155,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="FpsCam.cpp" />
+    <ClCompile Include="FpCam.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tigl.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FpsCam.h" />
+    <ClInclude Include="FpCam.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="tigl.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="WorldObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

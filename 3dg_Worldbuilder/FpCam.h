@@ -3,10 +3,10 @@
 
 struct GLFWwindow;
 
-class FpsCam
+class FpCam
 {
 public:
-	FpsCam(GLFWwindow*);
+	FpCam(GLFWwindow*);
 
 	glm::mat4 getMatrix();
 	void update(GLFWwindow*);
