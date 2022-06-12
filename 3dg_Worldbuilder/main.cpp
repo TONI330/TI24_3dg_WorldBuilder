@@ -173,26 +173,7 @@ void init()
 
  //   cubeModel = glm::mat4(1.0f);
 
- //   unsigned int textureId;
- //   glGenTextures(1, &textureId);
- //   glBindTexture(GL_TEXTURE_2D, textureId);
 
- //   int width, height, bpp;
-	//unsigned char* imgData = stbi_load("textures/minecraft_atlas.png", &width, &height, &bpp, 4);
-
- //   glTexImage2D(GL_TEXTURE_2D,
- //       0,		//level
- //       GL_RGBA,		//internal format
- //       512,		//width
- //       512,		//height
- //       0,		//border
- //       GL_RGBA,		//data format
- //       GL_UNSIGNED_BYTE,	//data type
- //       imgData);		//data
- //   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
- //   glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
- //   glBindTexture(GL_TEXTURE_2D, textureId);
  //   fillMap();
     
 

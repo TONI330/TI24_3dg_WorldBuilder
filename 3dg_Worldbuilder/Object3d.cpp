@@ -15,6 +15,9 @@ void Object3d::Update()
 void Object3d::Draw()
 {
 	WorldObject::Draw();
+
+	
+
 	mesh->draw();
 	std::cout << "drawing\n";
 }

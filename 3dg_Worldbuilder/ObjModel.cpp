@@ -196,6 +196,10 @@ void ObjModel::draw()
 	std::vector<tigl::Vertex> vertexList;
 	for (const auto faces : groups) 
 	{
+		if (faces->materialIndex) 
+		{
+			
+		}
 		for (const auto& face : faces->faces)
 		{
 			for (auto vertex : face.vertices)
@@ -248,6 +252,7 @@ void ObjModel::loadMaterialFile( const std::string &fileName, const std::string 
 				tex = tex.substr(tex.rfind("\\") + 1);
 			//TODO
 			currentMaterial->texture = new Texture(dirName + "/" + tex);
+			currentMaterial->texture->bind();
 		} 
 		else if (params[0] == "kd")
 		{//TODO, diffuse color

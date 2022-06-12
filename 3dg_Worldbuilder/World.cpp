@@ -35,11 +35,11 @@ void World::DrawWorld()
     tigl::shader->setViewMatrix(camera.getMatrix());
     tigl::shader->setModelMatrix(glm::scale(glm::mat4(1.0f), {0.2f, 0.2f, 0.2f}));
 
-    tigl::shader->enableColor(true);
+    //tigl::shader->enableColor(true);
 
     glEnable(GL_DEPTH_TEST);
     glPointSize(10.0f);
-    //tigl::shader->enableTexture(true);
+    tigl::shader->enableTexture(true);
 
     for (auto worldObject : objects)
     {
