@@ -8,6 +8,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "stb_image.h"
 #include "World.h"
+#include "Object3d.h"
 using tigl::Vertex;
 
 #pragma comment(lib, "glfw3.lib")
@@ -167,6 +168,7 @@ void init()
 
     camera = new FpCam(window);
     world = new World(*window, *camera);
+    world->AddWorldObject(new Object3d("models/car/honda_jazz.obj"));
  //   camera = new FpCam(window);
 
  //   cubeModel = glm::mat4(1.0f);

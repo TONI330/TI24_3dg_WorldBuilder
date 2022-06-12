@@ -4,14 +4,19 @@ World::World(GLFWwindow& window, FpCam& camera) : window(window), camera(camera)
 {
     time = 0;
     for (auto worldObject : objects)
-        worldObject.Init();
+        worldObject->Init();
+}
+
+void World::AddWorldObject(WorldObject* object)
+{
+    objects.push_back(object);
 }
 
 void World::UpdateWorld()
 {
 	for (auto worldObject : objects)
 	{
-		worldObject.Update();
+		worldObject->Update();
 	}
 	time++;
     camera.update(&window);
@@ -28,9 +33,17 @@ void World::DrawWorld()
 
     tigl::shader->setProjectionMatrix(projection);
     tigl::shader->setViewMatrix(camera.getMatrix());
+    tigl::shader->setModelMatrix(glm::scale(glm::mat4(1.0f), {0.2f, 0.2f, 0.2f}));
 
     tigl::shader->enableColor(true);
 
     glEnable(GL_DEPTH_TEST);
-    tigl::shader->enableTexture(true);
+    glPointSize(10.0f);
+    //tigl::shader->enableTexture(true);
+
+    for (auto worldObject : objects)
+    {
+        worldObject->Draw();
+        std::cout << worldObject->name << std::endl;
+    }
 }

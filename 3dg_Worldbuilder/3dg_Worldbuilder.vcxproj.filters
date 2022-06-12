@@ -1,51 +1,73 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="WorldResources">
+      <UniqueIdentifier>{4c829b36-4880-4026-a952-0717bc08c76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldResources\Objects">
+      <UniqueIdentifier>{aec80ebb-3cd6-42cb-abb2-8541901cbe79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{8d6ef657-89f6-4d6f-9e48-3685043ccee5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{e8f633f4-108b-420a-ab4c-b4dff9482bff}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tigl.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FpCam.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="World.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>WorldResources</Filter>
     </ClCompile>
     <ClCompile Include="WorldObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>WorldResources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="tigl.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="FpCam.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjModel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Object3d.cpp">
+      <Filter>WorldResources\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tigl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FpCam.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="World.h">
-      <Filter>Header Files</Filter>
+      <Filter>WorldResources</Filter>
     </ClInclude>
     <ClInclude Include="WorldObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>WorldResources\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="tigl.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="FpCam.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjModel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Object3d.h">
+      <Filter>WorldResources\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -157,13 +157,19 @@
   <ItemGroup>
     <ClCompile Include="FpCam.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Object3d.cpp" />
+    <ClCompile Include="ObjModel.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tigl.cpp" />
     <ClCompile Include="World.cpp" />
     <ClCompile Include="WorldObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FpCam.h" />
+    <ClInclude Include="Object3d.h" />
+    <ClInclude Include="ObjModel.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="tigl.h" />
     <ClInclude Include="World.h" />
     <ClInclude Include="WorldObject.h" />
