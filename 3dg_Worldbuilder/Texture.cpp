@@ -4,7 +4,6 @@
 
 Texture::Texture(const std::string & fileName)
 {
-	//TODO
 
     glGenTextures(1, &id);
     glBindTexture(GL_TEXTURE_2D, id);
@@ -16,8 +15,8 @@ Texture::Texture(const std::string & fileName)
     glTexImage2D(GL_TEXTURE_2D,
         0,		//level
         GL_RGBA,		//internal format
-        1024,		//width
-        1024,		//height
+        width,		//width
+        height,		//height
         0,		//border
         GL_RGBA,		//data format
         GL_UNSIGNED_BYTE,	//data type
@@ -29,6 +28,5 @@ Texture::Texture(const std::string & fileName)
 
 void Texture::bind()
 {
-
     glBindTexture(GL_TEXTURE_2D, id);
 }

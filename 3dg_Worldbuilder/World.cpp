@@ -1,4 +1,5 @@
 #include "World.h"
+#include "StaticSettings.h"
 
 World::World(GLFWwindow& window, FpCam& camera) : window(window), camera(camera)
 {
@@ -44,6 +45,8 @@ void World::DrawWorld()
     for (auto worldObject : objects)
     {
         worldObject->Draw();
+#if DEBUG_LEVEL == 0
         std::cout << worldObject->name << std::endl;
+#endif
     }
 }

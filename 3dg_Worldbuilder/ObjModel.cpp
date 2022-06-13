@@ -6,6 +6,7 @@
 
 #include "tigl.h"
 #include "Texture.h"
+#include "StaticSettings.h"
 
 using tigl::Vertex;
 
@@ -82,7 +83,9 @@ static inline std::string cleanLine(std::string line)
 */
 ObjModel::ObjModel(const std::string &fileName)
 {
+#if DEBUG_LEVEL <= 1
 	std::cout << "Loading " << fileName << std::endl;
+#endif
 	std::string dirName = fileName;
 	if(dirName.rfind("/") != std::string::npos)
 		dirName = dirName.substr(0, dirName.rfind("/"));
@@ -96,7 +99,9 @@ ObjModel::ObjModel(const std::string &fileName)
 
 	if (!pFile.is_open())
 	{
+#if DEBUG_LEVEL <= 3
 		std::cout << "Could not open file " << fileName << std::endl;
+#endif
 		return;
 	}
 
@@ -171,7 +176,9 @@ ObjModel::ObjModel(const std::string &fileName)
 				}
 			}
 			if(currentGroup->materialIndex == -1)
+#if DEBUG_LEVEL <= 3
 				std::cout<<"Could not find material name "<<params[1]<<std::endl;
+#endif
 		}
 	}
 	groups.push_back(currentGroup);
@@ -213,11 +220,16 @@ void ObjModel::draw()
 
 void ObjModel::loadMaterialFile( const std::string &fileName, const std::string &dirName )
 {
+#if DEBUG_LEVEL <= 1
 	std::cout << "Loading " << fileName << std::endl;
+#endif
 	std::ifstream pFile(fileName.c_str());
 	if (!pFile.is_open())
 	{
+#if DEBUG <= 2
 		std::cout << "Could not open file " << fileName << std::endl;
+#endif
+		
 		return;
 	}
 
@@ -281,7 +293,13 @@ void ObjModel::loadMaterialFile( const std::string &fileName, const std::string 
 			//these values are usually not used for rendering at this time, so ignore them
 		}
 		else
-			std::cout<<"Didn't parse "<<params[0]<<" in material file"<<std::endl;
+		{
+#if DEBUG <= 2
+			std::cout << "Didn't parse " << params[0] << " in material file" << std::endl;
+#endif
+		}
+
+			
 	}
 	if(currentMaterial != NULL)
 		materials.push_back(currentMaterial);

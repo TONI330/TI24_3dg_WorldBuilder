@@ -1,5 +1,6 @@
 #include "Object3d.h"
 #include <iostream>
+#include "StaticSettings.h"
 
 Object3d::Object3d(std::string meshPath)
 {
@@ -19,5 +20,12 @@ void Object3d::Draw()
 	
 
 	mesh->draw();
+
+#if DEBUG_LEVEL == 0
 	std::cout << "drawing\n";
+#endif
+
+
+
+	
 }

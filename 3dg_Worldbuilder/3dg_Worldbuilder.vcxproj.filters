@@ -69,5 +69,8 @@
     <ClInclude Include="Object3d.h">
       <Filter>WorldResources\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="StaticSettings.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

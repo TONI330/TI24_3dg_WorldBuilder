@@ -168,6 +168,7 @@
     <ClInclude Include="FpCam.h" />
     <ClInclude Include="Object3d.h" />
     <ClInclude Include="ObjModel.h" />
+    <ClInclude Include="StaticSettings.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="tigl.h" />
