@@ -9,7 +9,8 @@ private:
     ObjModel* mesh;
 
 public:
-    Object3d(std::string mesh);
+    Object3d(std::string meshPath);
+    Object3d(std::string meshPath, std::string name);
 
     void Update() override;
     void Draw() override;

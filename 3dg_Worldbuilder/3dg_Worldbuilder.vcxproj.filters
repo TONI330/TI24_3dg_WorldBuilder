@@ -17,6 +17,9 @@
     <Filter Include="Libs">
       <UniqueIdentifier>{e8f633f4-108b-420a-ab4c-b4dff9482bff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Libs\imgui">
+      <UniqueIdentifier>{ce6bbcc1-8f8c-4ab3-842d-9bc6b8588ed0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="World.cpp">
@@ -42,6 +45,19 @@
     </ClCompile>
     <ClCompile Include="Object3d.cpp">
       <Filter>WorldResources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="lib\imgui-1.60\imgui.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.60\imgui_demo.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.60\imgui_draw.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.60\imgui_impl_glfw_gl3.cpp">
+      <Filter>Libs\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +87,28 @@
     </ClInclude>
     <ClInclude Include="StaticSettings.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="lib\imgui-1.60\imconfig.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\imgui.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\imgui_impl_glfw_gl3.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\imgui_internal.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\stb_rect_pack.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\stb_textedit.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.60\stb_truetype.h">
+      <Filter>Libs\imgui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -18,6 +18,7 @@ void World::UpdateWorld()
 	for (auto worldObject : objects)
 	{
 		worldObject->Update();
+        worldObject->GetTransform()->position.x = -time / 10;
 	}
 	time++;
     camera.update(&window);
@@ -30,11 +31,12 @@ void World::DrawWorld()
 
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
-    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, 400.0f);
 
     tigl::shader->setProjectionMatrix(projection);
     tigl::shader->setViewMatrix(camera.getMatrix());
-    tigl::shader->setModelMatrix(glm::scale(glm::mat4(1.0f), {0.2f, 0.2f, 0.2f}));
+    tigl::shader->setModelMatrix(glm::translate(glm::mat4(1.0f), { 0.0f, 10.0f, 10.0f }));
+    
 
     //tigl::shader->enableColor(true);
 
