@@ -8,11 +8,12 @@
 Object3d::Object3d(std::string meshPath)
 {
 	mesh = new ObjModel(meshPath);
-	name = "nameless";
+	this->name = "nameless";
 }
 
-Object3d::Object3d(std::string meshPath, std::string name) 
+Object3d::Object3d(std::string meshPath, std::string constrName)
 {
+	this->name = constrName;
 	mesh = new ObjModel(meshPath);
 }
 

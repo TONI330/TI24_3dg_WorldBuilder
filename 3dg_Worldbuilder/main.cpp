@@ -11,6 +11,8 @@
 #include "Object3d.h"
 #include "imgui.h"
 #include "lib/imgui-1.60/imgui_impl_glfw_gl3.h"
+#include "StaticSettings.h"
+#include "EditGUI.h"
 using tigl::Vertex;
 
 #pragma comment(lib, "glfw3.lib")
@@ -24,8 +26,10 @@ GLFWwindow* window;
 
 FpCam* camera;
 World* world;
+EditGUI* gui;
 
 double lastTime = 0;
+bool editMode = true;
 
 glm::mat4 cubeModel;
 int textureMap[20][20][10];
@@ -128,8 +132,12 @@ void drawCube(int textureIndex, glm::vec3 pos, int size = 1)
 }
 
 
+int main(void);
+
 void init();
 void draw();
+void ToggleEditMode();
+void CenterCursor();
 
 int main(void)
 {
@@ -143,55 +151,37 @@ int main(void)
     }
     glfwMakeContextCurrent(window);
 
-    // Initialize GUI
-    ImGui::CreateContext();
-    ImGui_ImplGlfwGL3_Init(window, true);
-    ImGui::StyleColorsDark();
-
+    
 
     tigl::init(); // Initialize shader
     init(); // Initialize world
 
-    bool show_demo_window = true;
-    bool show_another_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-
 	while (!glfwWindowShouldClose(window))
 	{
-        ImGui_ImplGlfwGL3_NewFrame();
         world->UpdateWorld();
         world->DrawWorld();
 
-        // 1. Show a simple window.
-        // Tip: if we don't call ImGui::Begin()/ImGui::End() the widgets automatically appears in a window called "Debug".
+        //if (glfwGetKey(window, GLFW_KEY_ESCAPE))
+        //    glfwSetWindowShouldClose(window, true);
+        //if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS)
+        //    ToggleEditMode();
+
+        if (editMode)
         {
-            static float f = 0.0f;
-            static int counter = 0;
-            ImGui::Text("Hello, world!");                           // Display some text (you can use a format string too)
-            //ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f    
-            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our windows open/close state
-            ImGui::Checkbox("Another Window", &show_another_window);
-
-            if (ImGui::Button("Button"))                            // Buttons return true when clicked (NB: most widgets return true when edited/activated)
-                counter++;
-            ImGui::SameLine();
-            ImGui::Text("counter = %d", counter);
-
-            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+            gui->Update();
         }
-
-        ImGui::Render();
-        ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+        else
+        {
+            camera->update(window);
+        }
+        
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
         
 	}
     // Cleanup
-    ImGui_ImplGlfwGL3_Shutdown();
-    ImGui::DestroyContext();
+    
 	glfwTerminate();
     return 0;
 }
@@ -205,11 +195,15 @@ void init()
     {
         if (key == GLFW_KEY_ESCAPE)
             glfwSetWindowShouldClose(window, true);
+        if (key == GLFW_KEY_TAB && action == GLFW_PRESS)
+            ToggleEditMode();
     });
 
     camera = new FpCam(window);
     world = new World(*window, *camera);
     world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz"));
+    world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz two"));
+    gui = new EditGUI(*world, *window);
  //   camera = new FpCam(window);
 
  //   cubeModel = glm::mat4(1.0f);
@@ -218,6 +212,34 @@ void init()
  //   fillMap();
     
 
+}
+
+void ToggleEditMode()
+{
+    editMode = !editMode;
+    if (!editMode)
+    {
+        // Prepare camera
+        CenterCursor();
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        
+    }
+    else
+    {
+        // Prepare GUI
+        CenterCursor();
+        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+    }
+}
+
+void CenterCursor()
+{
+    int width, height;
+    glfwGetWindowSize(window, &width, &height);
+    glfwSetCursorPos(window, width / 2, height / 2);
+#if DEBUG_LEVEL <= 1
+    std::cout << "Centering window on: " << width / 2 << ", " << height / 2;
+#endif
 }
 
 void draw()

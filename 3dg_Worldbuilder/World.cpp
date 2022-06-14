@@ -18,10 +18,9 @@ void World::UpdateWorld()
 	for (auto worldObject : objects)
 	{
 		worldObject->Update();
-        worldObject->GetTransform()->position.x = -time / 10;
+        //worldObject->GetTransform()->position.x = -time / 10;
 	}
 	time++;
-    camera.update(&window);
 }
 
 void World::DrawWorld()
@@ -51,4 +50,13 @@ void World::DrawWorld()
         std::cout << worldObject->name << std::endl;
 #endif
     }
+}
+
+World::~World()
+{
+    for (auto worldObject : objects)
+    {
+        free(worldObject);
+    }
+    objects.clear();
 }

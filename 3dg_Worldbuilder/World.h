@@ -23,4 +23,6 @@ public:
 	void UpdateWorld();
 	void DrawWorld();
 
+	~World();
+
 };

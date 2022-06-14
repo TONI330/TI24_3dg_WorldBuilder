@@ -2,7 +2,7 @@
 
 MUST
 Door de wereld heen lopen / vliegen 			DONE
-Verplaatsen en plaatsen van items in de wereld		TODO
+Verplaatsen en plaatsen van items in de wereld		DONE
 Laden van polygons					DONE
 Lichten verplaatsen					TODO
 Bewegende zon						TODO
@@ -18,4 +18,4 @@ Werelden naar bestanden schrijven
 COULD
 Meshes editen
 Dynamisch objecten laden
-Edit mode en view mode
+Edit mode en view mode (met tab switchen tussen imgui en camera)
