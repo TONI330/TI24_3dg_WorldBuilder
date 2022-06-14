@@ -47,22 +47,31 @@
       <Filter>WorldResources\Objects</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="lib\imgui-1.60\imgui.cpp">
-      <Filter>Libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\imgui-1.60\imgui_demo.cpp">
-      <Filter>Libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\imgui-1.60\imgui_draw.cpp">
-      <Filter>Libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="lib\imgui-1.60\imgui_impl_glfw_gl3.cpp">
-      <Filter>Libs\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="FpCam.cpp">
       <Filter>WorldManagement</Filter>
     </ClCompile>
     <ClCompile Include="EditGUI.cpp" />
+    <ClCompile Include="lib\imgui-1.87\imgui.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_demo.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_draw.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_impl_glfw.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_impl_opengl3.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_tables.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_widgets.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h">
@@ -90,30 +99,41 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Transform.h" />
-    <ClInclude Include="lib\imgui-1.60\imconfig.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\imgui.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\imgui_impl_glfw_gl3.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\imgui_internal.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\stb_rect_pack.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\stb_textedit.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.60\stb_truetype.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="FpCam.h">
       <Filter>WorldManagement</Filter>
     </ClInclude>
     <ClInclude Include="EditGUI.h" />
+    <ClInclude Include="lib\imgui-1.87\imconfig.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui_impl_glfw.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3_loader.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui_internal.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imstb_rectpack.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imstb_textedit.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imstb_truetype.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgui.ini">
+      <Filter>Main</Filter>
+    </None>
   </ItemGroup>
 </Project>

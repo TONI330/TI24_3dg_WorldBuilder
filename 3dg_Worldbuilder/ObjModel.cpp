@@ -76,8 +76,6 @@ static inline std::string cleanLine(std::string line)
 }
 
 
-
-
 /**
 * Loads an object model
 */
@@ -205,7 +203,7 @@ void ObjModel::draw()
 	{
 		if (faces->materialIndex) 
 		{
-			
+			materials[faces->materialIndex]->texture->bind();
 		}
 		for (const auto& face : faces->faces)
 		{

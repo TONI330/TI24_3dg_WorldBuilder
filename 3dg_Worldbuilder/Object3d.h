@@ -12,6 +12,8 @@ public:
     Object3d(std::string meshPath);
     Object3d(std::string meshPath, std::string name);
 
+    glm::mat4 TransToModel(const Transform& transform);
+
     void Update() override;
     void Draw() override;
 

@@ -161,11 +161,6 @@ int main(void)
         world->UpdateWorld();
         world->DrawWorld();
 
-        //if (glfwGetKey(window, GLFW_KEY_ESCAPE))
-        //    glfwSetWindowShouldClose(window, true);
-        //if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS)
-        //    ToggleEditMode();
-
         if (editMode)
         {
             gui->Update();
@@ -202,31 +197,26 @@ void init()
     camera = new FpCam(window);
     world = new World(*window, *camera);
     world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz"));
-    world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz two"));
+    world->AddWorldObject(new Object3d("models/empty_street.obj", "street"));
     gui = new EditGUI(*world, *window);
- //   camera = new FpCam(window);
-
- //   cubeModel = glm::mat4(1.0f);
-
-
- //   fillMap();
-    
 
 }
 
+double cursorX, cursorY;
 void ToggleEditMode()
 {
     editMode = !editMode;
     if (!editMode)
     {
         // Prepare camera
-        CenterCursor();
+        //CenterCursor();
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-        
+        glfwSetCursorPos(window, cursorX, cursorY);
     }
     else
     {
         // Prepare GUI
+        glfwGetCursorPos(window, &cursorX, &cursorY);
         CenterCursor();
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
     }
