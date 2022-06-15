@@ -28,5 +28,5 @@ Texture::Texture(const std::string & fileName)
 
 void Texture::bind()
 {
-    glBindTexture(GL_TEXTURE_2D, id);
+    if(id) glBindTexture(GL_TEXTURE_2D, id);
 }

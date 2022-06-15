@@ -197,6 +197,7 @@ void init()
     camera = new FpCam(window);
     world = new World(*window, *camera);
     world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz"));
+    world->AddWorldObject(new Object3d("models/sandshit.obj", "map"));
     world->AddWorldObject(new Object3d("models/empty_street.obj", "street"));
     gui = new EditGUI(*world, *window);
 

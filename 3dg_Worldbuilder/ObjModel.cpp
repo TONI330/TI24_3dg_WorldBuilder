@@ -173,10 +173,12 @@ ObjModel::ObjModel(const std::string &fileName)
 					break;
 				}
 			}
-			if(currentGroup->materialIndex == -1)
+			if (currentGroup->materialIndex == -1) {
 #if DEBUG_LEVEL <= 3
-				std::cout<<"Could not find material name "<<params[1]<<std::endl;
+				std::cout << "Could not find material name " << params[1] << std::endl;
 #endif
+			}
+
 		}
 	}
 	groups.push_back(currentGroup);
@@ -201,10 +203,9 @@ void ObjModel::draw()
 	std::vector<tigl::Vertex> vertexList;
 	for (const auto faces : groups) 
 	{
-		if (faces->materialIndex) 
-		{
+		
 			materials[faces->materialIndex]->texture->bind();
-		}
+		
 		for (const auto& face : faces->faces)
 		{
 			for (auto vertex : face.vertices)

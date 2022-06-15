@@ -1,6 +1,7 @@
 #include "FpCam.h"
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
+#include "StaticSettings.h"
 
 FpCam::FpCam(GLFWwindow* window)
 {
@@ -19,10 +20,12 @@ glm::mat4 FpCam::getMatrix()
 	return ret;
 }
 
-void FpCam::move(float angle, float fac)
+void FpCam::move(float angle, float fac, bool backwards)
 {
 	position.x += (float)cos(rotation.y + glm::radians(angle)) * fac;
 	position.z += (float)sin(rotation.y + glm::radians(angle)) * fac;
+	if (!backwards) { position.y += (rotation.x / (1 / MOVEMENT_SPEED)); }
+	else { position.y -= (rotation.x / (1 / MOVEMENT_SPEED)); }
 }
 
 
@@ -42,11 +45,11 @@ void FpCam::update(GLFWwindow* window)
 
 
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-		move(0, 0.05f);
+		move(0, MOVEMENT_SPEED, false);
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-		move(180, 0.05f);
+		move(180, MOVEMENT_SPEED, false);
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-		move(90, 0.05f);
+		move(90, MOVEMENT_SPEED, false);
 	if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-		move(-90, 0.05f);
+		move(-90, MOVEMENT_SPEED, true);
 }
