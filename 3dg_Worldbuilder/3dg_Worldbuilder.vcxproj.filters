@@ -31,9 +31,6 @@
     <ClCompile Include="WorldObject.cpp">
       <Filter>WorldResources\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="tigl.cpp">
-      <Filter>Libs</Filter>
-    </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -72,6 +69,13 @@
     <ClCompile Include="lib\imgui-1.87\imgui_widgets.cpp">
       <Filter>Libs\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="WorldFactory.cpp" />
+    <ClCompile Include="ObjectLight.cpp" />
+    <ClCompile Include="VBOModel.cpp" />
+    <ClCompile Include="tigl.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="StringUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h">
@@ -81,9 +85,6 @@
       <Filter>WorldResources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="stb_image.h">
-      <Filter>Libs</Filter>
-    </ClInclude>
-    <ClInclude Include="tigl.h">
       <Filter>Libs</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
@@ -130,6 +131,13 @@
     <ClInclude Include="lib\imgui-1.87\imstb_truetype.h">
       <Filter>Libs\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="WorldFactory.h" />
+    <ClInclude Include="ObjectLight.h" />
+    <ClInclude Include="VBOModel.h" />
+    <ClInclude Include="tigl.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini">

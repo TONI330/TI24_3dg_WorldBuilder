@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -166,11 +166,15 @@
     <ClCompile Include="lib\imgui-1.87\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Object3d.cpp" />
+    <ClCompile Include="ObjectLight.cpp" />
     <ClCompile Include="ObjModel.cpp" />
+    <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tigl.cpp" />
     <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="VBOModel.cpp" />
     <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldFactory.cpp" />
     <ClCompile Include="WorldObject.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,13 +190,17 @@
     <ClInclude Include="lib\imgui-1.87\imstb_textedit.h" />
     <ClInclude Include="lib\imgui-1.87\imstb_truetype.h" />
     <ClInclude Include="Object3d.h" />
+    <ClInclude Include="ObjectLight.h" />
     <ClInclude Include="ObjModel.h" />
     <ClInclude Include="StaticSettings.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="StringUtil.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="tigl.h" />
     <ClInclude Include="Transform.h" />
+    <ClInclude Include="VBOModel.h" />
     <ClInclude Include="World.h" />
+    <ClInclude Include="WorldFactory.h" />
     <ClInclude Include="WorldObject.h" />
   </ItemGroup>
   <ItemGroup>

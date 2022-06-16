@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include "VBOModel.h"
 
 class Texture;
 
@@ -52,8 +53,11 @@ private:
 
 	void loadMaterialFile(const std::string &fileName, const std::string &dirName);
 public:
+	inline static std::vector<std::string> split(std::string str, const std::string& seperator);
 	ObjModel(const std::string &filename);
 	~ObjModel(void);
+
+	VBOModel* ToVBOModel();
 
 	void draw();
 };

@@ -12,6 +12,7 @@ public:
 	WorldObject();
 
 	std::string name;
+	int id;
 
 	Transform* GetTransform();
 	virtual void Init() {};

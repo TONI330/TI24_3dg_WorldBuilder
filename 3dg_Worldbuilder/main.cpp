@@ -196,9 +196,11 @@ void init()
 
     camera = new FpCam(window);
     world = new World(*window, *camera);
-    world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz"));
-    world->AddWorldObject(new Object3d("models/sandshit.obj", "map"));
-    world->AddWorldObject(new Object3d("models/empty_street.obj", "street"));
+    //world->AddWorldObject(new Object3d("models/car/honda_jazz.obj", "honda jazz"));
+    auto map = new Object3d("models/landscapeflat.obj", "map");
+    map->Scale(20);
+    world->AddWorldObject(map);
+    //world->AddWorldObject(new Object3d("models/empty_street.obj", "street"));
     gui = new EditGUI(*world, *window);
 
 }
@@ -240,7 +242,7 @@ void draw()
     
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
-    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, 400.0f);
 
     tigl::shader->setProjectionMatrix(projection);
     tigl::shader->setViewMatrix(camera->getMatrix());

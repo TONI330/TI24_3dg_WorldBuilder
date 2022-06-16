@@ -5,11 +5,13 @@
 #include "tigl.h"
 #include "Transform.h"
 
+
 glm::mat4 Object3d::TransToModel(const Transform& transform)
 {
 	auto modelMatrix = glm::mat4(1.0f);
-	modelMatrix = glm::scale(modelMatrix, transform.scale);
 	modelMatrix = glm::translate(modelMatrix, transform.position);
+	modelMatrix = glm::scale(modelMatrix, transform.scale);
+
 
 	auto rotation = transform.rotation;
 	modelMatrix = glm::rotate(modelMatrix, rotation.x, glm::vec3(1, 0, 0));
@@ -17,6 +19,20 @@ glm::mat4 Object3d::TransToModel(const Transform& transform)
 	modelMatrix = glm::rotate(modelMatrix, rotation.z, glm::vec3(0, 0, 1));
 	
 	return modelMatrix;
+}
+
+void Object3d::Scale(const float scale)
+{
+	this->GetTransform()->scale.x *= scale;
+	this->GetTransform()->scale.y *= scale;
+	this->GetTransform()->scale.z *= scale;
+}
+
+void Object3d::Scale(const glm::vec3 scale)
+{
+	this->GetTransform()->scale.x *= scale.x;
+	this->GetTransform()->scale.x *= scale.y;
+	this->GetTransform()->scale.x *= scale.z;
 }
 
 Object3d::Object3d(std::string meshPath)

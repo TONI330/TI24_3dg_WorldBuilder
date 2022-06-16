@@ -14,6 +14,7 @@ private:
 	float time;
 	FpCam& camera;
 	GLFWwindow& window;
+	int lightCount = 0;
 	
 	void RotateAround(glm::vec3 center, glm::vec3 target, float angle_radians);
 
@@ -24,6 +25,8 @@ public:
 	void AddWorldObject(WorldObject* object);
 	void UpdateWorld();
 	void DrawWorld();
+
+	WorldObject* FindObjectById(const int &id);
 
 	template<class T>
 	std::vector<T*> GetWorldObjects()
@@ -37,6 +40,8 @@ public:
 		}
 		return found;
 	}
+
+	
 
 	~World();
 

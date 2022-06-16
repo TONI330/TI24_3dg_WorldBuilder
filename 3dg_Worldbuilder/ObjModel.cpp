@@ -3,77 +3,14 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
 #include "tigl.h"
 #include "Texture.h"
 #include "StaticSettings.h"
 
 using tigl::Vertex;
 
-/**
-* Replaces a substring in a string
-*/
-static std::string replace(std::string str, const std::string &toReplace, const std::string &replacement)
-{
-	size_t index = 0;
-	while (true) 
-	{
-		 index = str.find(toReplace, index);
-		 if (index == std::string::npos) 
-			 break;
-		 str.replace(index, toReplace.length(), replacement);
-		 ++index;
-	}
-	return str;
-}
-
-/**
-* Splits a string into substrings, based on a seperator
-*/
-static std::vector<std::string> split(std::string str, const std::string &seperator)
-{
-	std::vector<std::string> ret;
-	size_t index;
-	while(true)
-	{
-		index = str.find(seperator);
-		if(index == std::string::npos)
-			break;
-		ret.push_back(str.substr(0, index));
-		str = str.substr(index+1);
-	}
-	ret.push_back(str);
-	return ret;
-}
-
-/**
-* Turns a string to lowercase
-*/
-static inline std::string toLower(std::string data)
-{
-	std::transform(data.begin(), data.end(), data.begin(), ::tolower);
-	return data;
-}
 
 
-/**
-* Cleans up a line for processing
-*/
-static inline std::string cleanLine(std::string line)
-{
-	line = replace(line, "\t", " ");
-	while (line.find("  ") != std::string::npos)
-		line = replace(line, "  ", " ");
-	if (line == "")
-		return "";
-	if (line[0] == ' ')
-		line = line.substr(1);
-	if (line == "")
-		return "";
-	if (line[line.length() - 1] == ' ')
-		line = line.substr(0, line.length() - 1);
-	return line;
-}
 
 
 /**
@@ -189,8 +126,26 @@ ObjModel::~ObjModel(void)
 {
 }
 
+VBOModel* ObjModel::ToVBOModel()
+{
+	VBOModel* model = new VBOModel();
+	for (const auto& group : groups)
+	{
+		model->textures.push_back(
+			materials[group->materialIndex]->texture);
+		std::vector<tigl::Vertex> VBOvertices;
 
-
+		for (const auto& face : group->faces)
+		{
+			for (auto vertex : face.vertices)
+			{
+				VBOvertices.push_back(tigl::Vertex::PTN(vertices[vertex.position], texcoords[vertex.texcoord], normals[vertex.normal]));
+			}
+		}
+		//model->vbos.push_back(tigl::createVbo(VBOvertices));
+	}
+	return model;
+}
 
 void ObjModel::draw()
 {
@@ -201,20 +156,19 @@ void ObjModel::draw()
 	//    foreach vertex in face
 	//      emit vertex
 	std::vector<tigl::Vertex> vertexList;
-	for (const auto faces : groups) 
+	for (const auto group : groups) 
 	{
+			materials[group->materialIndex]->texture->bind();
 		
-			materials[faces->materialIndex]->texture->bind();
-		
-		for (const auto& face : faces->faces)
+		for (const auto& face : group->faces)
 		{
 			for (auto vertex : face.vertices)
 			{
 				vertexList.push_back(tigl::Vertex::PTN(vertices[vertex.position], texcoords[vertex.texcoord], normals[vertex.normal]));
 			}
 		}
+		tigl::drawVertices(GL_TRIANGLES, vertexList);
 	}
-	tigl::drawVertices(GL_TRIANGLES, vertexList);
 }
 
 void ObjModel::loadMaterialFile( const std::string &fileName, const std::string &dirName )

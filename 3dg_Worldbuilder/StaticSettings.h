@@ -5,3 +5,5 @@
 #define DEBUG_LEVEL 1
 
 #define MOVEMENT_SPEED 10.0f
+
+#define SAVE_FILE "world.txt"

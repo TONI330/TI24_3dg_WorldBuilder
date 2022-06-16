@@ -1,0 +1,2 @@
+wo 3d m= models/car/honda_jazz.obj p= 30 70 0
+#wo 3d m= models/landscape.obj p= 0 0 0
