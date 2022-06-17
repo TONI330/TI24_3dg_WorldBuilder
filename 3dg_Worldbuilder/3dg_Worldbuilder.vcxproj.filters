@@ -25,23 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="World.cpp">
-      <Filter>WorldResources</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldObject.cpp">
-      <Filter>WorldResources\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Object3d.cpp">
-      <Filter>WorldResources\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Transform.cpp" />
-    <ClCompile Include="FpCam.cpp">
-      <Filter>WorldManagement</Filter>
-    </ClCompile>
-    <ClCompile Include="EditGUI.cpp" />
     <ClCompile Include="lib\imgui-1.87\imgui.cpp">
       <Filter>Libs\imgui</Filter>
     </ClCompile>
@@ -54,63 +37,56 @@
     <ClCompile Include="lib\imgui-1.87\imgui_impl_glfw.cpp">
       <Filter>Libs\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="lib\imgui-1.87\imgui_impl_opengl3.cpp">
-      <Filter>Libs\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="lib\imgui-1.87\imgui_tables.cpp">
       <Filter>Libs\imgui</Filter>
     </ClCompile>
     <ClCompile Include="lib\imgui-1.87\imgui_widgets.cpp">
       <Filter>Libs\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="WorldFactory.cpp" />
-    <ClCompile Include="ObjectLight.cpp" />
-    <ClCompile Include="VBOModel.cpp" />
-    <ClCompile Include="tigl.cpp">
-      <Filter>Libs</Filter>
-    </ClCompile>
-    <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="source\main.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="source\ObjModel.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="source\EditGUI.cpp" />
+    <ClCompile Include="source\ObjectLight.cpp">
+      <Filter>WorldResources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="source\World.cpp">
+      <Filter>WorldResources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\StringUtil.cpp" />
+    <ClCompile Include="source\Transform.cpp" />
+    <ClCompile Include="source\VBOModel.cpp" />
+    <ClCompile Include="source\WorldFactory.cpp" />
+    <ClCompile Include="source\WorldObject.cpp">
+      <Filter>WorldResources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="source\FpCam.cpp">
+      <Filter>WorldManagement</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Object3d.cpp">
+      <Filter>WorldResources\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Texture.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tigl.cpp">
+      <Filter>Libs</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\imgui-1.87\imgui_impl_opengl3.cpp">
+      <Filter>Libs\imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="World.h">
-      <Filter>WorldResources</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldObject.h">
-      <Filter>WorldResources\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="stb_image.h">
       <Filter>Libs</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Object3d.h">
-      <Filter>WorldResources\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="StaticSettings.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Transform.h" />
-    <ClInclude Include="FpCam.h">
-      <Filter>WorldManagement</Filter>
-    </ClInclude>
-    <ClInclude Include="EditGUI.h" />
     <ClInclude Include="lib\imgui-1.87\imconfig.h">
       <Filter>Libs\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="lib\imgui-1.87\imgui.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="lib\imgui-1.87\imgui_impl_glfw.h">
-      <Filter>Libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3.h">
       <Filter>Libs\imgui</Filter>
     </ClInclude>
     <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3_loader.h">
@@ -128,15 +104,43 @@
     <ClInclude Include="lib\imgui-1.87\imstb_truetype.h">
       <Filter>Libs\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="WorldFactory.h" />
-    <ClInclude Include="ObjectLight.h" />
-    <ClInclude Include="VBOModel.h" />
-    <ClInclude Include="tigl.h">
-      <Filter>Libs</Filter>
-    </ClInclude>
-    <ClInclude Include="StringUtil.h" />
     <ClInclude Include="source\ObjModel.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="source\EditGUI.h" />
+    <ClInclude Include="source\ObjectLight.h">
+      <Filter>WorldResources\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="source\World.h">
+      <Filter>WorldResources</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StringUtil.h" />
+    <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\VBOModel.h" />
+    <ClInclude Include="source\WorldFactory.h" />
+    <ClInclude Include="source\WorldObject.h">
+      <Filter>WorldResources\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="source\FpCam.h">
+      <Filter>WorldManagement</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Object3d.h">
+      <Filter>WorldResources\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Texture.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StaticSettings.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tigl.h">
+      <Filter>Libs</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui.h">
+      <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3.h">
+      <Filter>Libs\imgui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

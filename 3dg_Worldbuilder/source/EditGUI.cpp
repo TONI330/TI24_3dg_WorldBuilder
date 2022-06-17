@@ -1,11 +1,10 @@
 #include "EditGUI.h"
-#include "lib/imgui-1.87/imgui.h"
-#include "lib/imgui-1.87/imgui_impl_glfw.h"
-#include "lib/imgui-1.87/imgui_impl_opengl3.h"
+#include "../lib/imgui-1.87/imgui.h"
+#include "../lib/imgui-1.87/imgui_impl_glfw.h"
+#include "../lib/imgui-1.87/imgui_impl_opengl3.h"
 #include "Object3d.h"
 #include "ObjectLight.h"
 #include <sstream>
-
 
 EditGUI::EditGUI(World& world, GLFWwindow& window) : world(world), window(window)
 {
