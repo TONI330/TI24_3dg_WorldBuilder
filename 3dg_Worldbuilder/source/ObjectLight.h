@@ -9,7 +9,8 @@ class ObjectLight :
 public:
     int lightId;
 
-    ObjectLight(int& lightsAmount);
+    ObjectLight(int& lightsAmount, const int lightId);
+    ObjectLight(const int lightId);
     void Update() override;
     void Draw() override;
 

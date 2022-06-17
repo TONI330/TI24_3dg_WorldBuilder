@@ -55,9 +55,20 @@ void EditGUI::Update()
         ImGui::PopStyleColor();
     }
     
+    ImGui::Text("Change position:");
     ImGui::DragFloat("X position", &world.FindObjectById(selectedId)->GetTransform()->position.x, SLIDER_SENSITIVITY);
     ImGui::DragFloat("Y position", &world.FindObjectById(selectedId)->GetTransform()->position.y, SLIDER_SENSITIVITY);
     ImGui::DragFloat("Z position", &world.FindObjectById(selectedId)->GetTransform()->position.z, SLIDER_SENSITIVITY);
+
+    ImGui::Text("Change size:");
+    ImGui::DragFloat("X scale", &world.FindObjectById(selectedId)->GetTransform()->scale.x, SLIDER_SENSITIVITY / SLIDER_SCALE_MODIFIER);
+    ImGui::DragFloat("Y scale", &world.FindObjectById(selectedId)->GetTransform()->scale.y, SLIDER_SENSITIVITY / SLIDER_SCALE_MODIFIER);
+    ImGui::DragFloat("Z scale", &world.FindObjectById(selectedId)->GetTransform()->scale.z, SLIDER_SENSITIVITY / SLIDER_SCALE_MODIFIER);
+
+    ImGui::Text("Change rotation:");
+    ImGui::DragFloat("X rotation", &world.FindObjectById(selectedId)->GetTransform()->rotation.x, SLIDER_SENSITIVITY / SLIDER_ROTATION_MODIFIER);
+    ImGui::DragFloat("Y rotation", &world.FindObjectById(selectedId)->GetTransform()->rotation.y, SLIDER_SENSITIVITY / SLIDER_ROTATION_MODIFIER);
+    ImGui::DragFloat("Z rotation", &world.FindObjectById(selectedId)->GetTransform()->rotation.z, SLIDER_SENSITIVITY / SLIDER_ROTATION_MODIFIER);
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

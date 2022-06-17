@@ -14,11 +14,21 @@
 
 #define WINDOW_HEIGHT 1080
 #define WINDOW_WIDTH 1920
-#define MAPFILE "models/landscape.obj"
+#define MAPFILE "models/landscapeflat.obj"
 #define MAPSIZE 20
+
+#define SUN_DIST 8000
+#define MORNING 0
+#define DAY 90
+#define EVENING 180
+#define NIGHT 270
+#define START_TIME NIGHT
+
 
 //imgui settings
 #define ACTIVE_BUTTON_COLOR { 0, 0, 0, 0.5f }
 #define INACTIVE_BUTTON_COLOR  { 0, 0, 0, 0.3f }
 #define BUTTON_SIZE {230, 40}
 #define SLIDER_SENSITIVITY 1.0f
+#define SLIDER_ROTATION_MODIFIER 90 //the higher, the lower the sensitivity for rotation
+#define SLIDER_SCALE_MODIFIER 4 //the higher, the lower the sensitivity for scale

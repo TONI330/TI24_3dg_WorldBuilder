@@ -1,11 +1,16 @@
 #include "ObjectLight.h"
 #include "tigl.h"
 
-ObjectLight::ObjectLight(int& lightsAmount)
+ObjectLight::ObjectLight(int& lightsAmount, const int lightId) : lightId(lightId)
 {
 	lightsAmount++;
-	lightId = lightsAmount;
 	tigl::shader->setLightCount(lightsAmount);
+	tigl::shader->setLightDirectional(lightId, false);
+}
+
+ObjectLight::ObjectLight(const int lightId)
+{
+	tigl::shader->setLightCount(lightId);
 	tigl::shader->setLightDirectional(lightId, false);
 }
 

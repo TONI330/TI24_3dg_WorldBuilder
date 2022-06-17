@@ -8,15 +8,13 @@
 World::World(GLFWwindow& window, FpCam& camera) : window(window), camera(camera)
 {
     time = 0;
-
-    //load world from file
     
-
     //add sun
     auto sun = new Object3d("models/sun.obj", "sun");
     sun->Scale(200);
     this->AddWorldObject(sun);
 
+    //load world from file
     auto loadedObjects =  WorldFactory::LoadWorldObjects();
     this->objects.insert(objects.end(), loadedObjects.begin(), loadedObjects.end());
 
@@ -33,8 +31,13 @@ World::World(GLFWwindow& window, FpCam& camera) : window(window), camera(camera)
     tigl::shader->setLightDiffuse(0, glm::vec3(0.8f, 0.8f, 0.8f));
     tigl::shader->setLightSpecular(0, glm::vec3(0, 0, 0));
     tigl::shader->setShinyness(32.0f);
-    AddWorldObject(new ObjectLight(lightCount));
-    AddWorldObject(new ObjectLight(lightCount));
+
+    tigl::shader->enableFog(true);
+    tigl::shader->setFogColor(glm::vec3(1, 1, 1));
+    tigl::shader->setFogLinear(10, 10000);
+
+    AddWorldObject(new ObjectLight(lightCount, lightCount +1));
+    AddWorldObject(new ObjectLight(lightCount, lightCount +1));
 }
 
 
@@ -48,18 +51,17 @@ void World::AddWorldObject(WorldObject* object)
 float sunAngle;
 void World::UpdateWorld()
 {
+    time++;
 	for (auto worldObject : objects)
 	{
 		worldObject->Update();
 	}
 
+    //orbiting of sun
     auto sunTransform = this->GetWorldObjects<Object3d>()[0]->GetTransform();
-    //TODO orbit sun
-    sunAngle = 90 + ((float)time / 60);
-    //sunAngle = 270;
-    sunTransform->position.x = (8000 * -glm::cos(glm::radians(sunAngle)));
-    sunTransform->position.y = (8000 * glm::sin(glm::radians(sunAngle)));
-	time++;
+    sunAngle = START_TIME + ((float)time / 60);   
+    sunTransform->position.x = (SUN_DIST * -glm::cos(glm::radians(sunAngle)));
+    sunTransform->position.y = (SUN_DIST * glm::sin(glm::radians(sunAngle)));
 }
 
 void World::DrawWorld()
@@ -69,11 +71,10 @@ void World::DrawWorld()
 
     int viewport[4];
     glGetIntegerv(GL_VIEWPORT, viewport);
-    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, 16000.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(75.0f), viewport[2] / (float)viewport[3], 0.01f, (float)SUN_DIST * 2);
 
     tigl::shader->setProjectionMatrix(projection);
     tigl::shader->setViewMatrix(camera.getMatrix());
-    //tigl::shader->setModelMatrix(glm::translate(glm::mat4(1.0f), { 0.0f, 10.0f, 10.0f }));
 
     glEnable(GL_DEPTH_TEST);
     glPointSize(10.0f);

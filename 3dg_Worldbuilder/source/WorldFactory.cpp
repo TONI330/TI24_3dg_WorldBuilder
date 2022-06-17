@@ -2,20 +2,37 @@
 #include <iostream>
 #include "WorldFactory.h"
 #include "Object3d.h"
+#include "ObjectLight.h"
 #include "StaticSettings.h"
 #include "StringUtil.h"
+
 
 WorldObject* WorldFactory::GetWorldObject(std::string line)
 {
     std::vector<std::string> params = StringUtil::split(line, " ");
     if (StringUtil::IndexOf(params, "3d") != -1)
     {
-        if(StringUtil::IndexOf(params, "m=") != -1)
-            return new Object3d(params[StringUtil::IndexOf(params, "m=") + 1]);
+        if (StringUtil::IndexOf(params, "m=") != -1)
+        {
+            auto object = new Object3d(params[StringUtil::IndexOf(params, "m=") + 1]);
+            if (StringUtil::IndexOf(params, "n=") != -1)
+            {
+                object->name = params[StringUtil::IndexOf(params, "n=") + 1];
+            }
+            return object;
+        }
+        else
+        {
 #if DEBUG_LEVEL <= DEBUG_LEVEL_ERROR
-        std::cout << "3d object in save file has no mesh";
+            std::cout << "3d object in save file has no mesh";
 #endif
+        }
     }
+    if(StringUtil::IndexOf(params, "lo") != -1)
+    {
+        return new ObjectLight(atoi(params[StringUtil::IndexOf(params, "id=") + 1].c_str()));
+    }
+
 }
 
 std::vector<WorldObject*> WorldFactory::LoadWorldObjects()

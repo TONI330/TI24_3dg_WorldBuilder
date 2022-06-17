@@ -1,2 +1,8 @@
-wo 3d m= models/car/honda_jazz.obj p= 30 70 0
-#wo 3d m= models/landscape.obj p= 0 0 0
+wo 3d m= models/car/honda_jazz.obj p= 100 100 100 n= hondajazz
+wo 3d m= models/tree.obj p= 0 0 0 n= tree
+wo 3d m= models/tree.obj p= 1000 0 0 n= tree
+wo 3d m= models/tree.obj p= 0 0 2000 n= tree
+wo 3d m= models/tree.obj p= 2000 0 2000 n= tree
+wo 3d m= models/suzanne.obj p= -2000 4000 2000 n= suzanne
+
+wo lo p= 10 100 5 id= 4
