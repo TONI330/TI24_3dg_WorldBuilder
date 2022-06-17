@@ -34,12 +34,6 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjModel.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Object3d.cpp">
       <Filter>WorldResources\Objects</Filter>
     </ClCompile>
@@ -76,6 +70,12 @@
       <Filter>Libs</Filter>
     </ClCompile>
     <ClCompile Include="StringUtil.cpp" />
+    <ClCompile Include="source\main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ObjModel.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h">
@@ -88,9 +88,6 @@
       <Filter>Libs</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjModel.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Object3d.h">
@@ -138,9 +135,12 @@
       <Filter>Libs</Filter>
     </ClInclude>
     <ClInclude Include="StringUtil.h" />
+    <ClInclude Include="source\ObjModel.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="imgui.ini">
+    <None Include="source\imgui.ini">
       <Filter>Main</Filter>
     </None>
   </ItemGroup>

@@ -1,0 +1,30 @@
+\hypertarget{_object3d_8h_source}{}\doxysection{Object3d.\+h}
+\label{_object3d_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/Object3d.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/Object3d.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}WorldObject.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}ObjModel.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}VBOModel.h"{}}}
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_object3d}{Object3d}} :}
+\DoxyCodeLine{7     \textcolor{keyword}{public} \mbox{\hyperlink{class_world_object}{WorldObject}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_obj_model}{ObjModel}}* mesh;}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{public}:}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_object3d}{Object3d}}(std::string meshPath);}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_object3d}{Object3d}}(std::string meshPath, std::string name);}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     glm::mat4 TransToModel(\textcolor{keyword}{const} \mbox{\hyperlink{struct_transform}{Transform}}\& transform);}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} Scale(\textcolor{keyword}{const} \textcolor{keywordtype}{float} scale);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} Scale(\textcolor{keyword}{const} glm::vec3 scale);}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} Update() \textcolor{keyword}{override};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} Draw() \textcolor{keyword}{override};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+
+\end{DoxyCode}

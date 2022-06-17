@@ -1,0 +1,27 @@
+\hypertarget{_fp_cam_8h_source}{}\doxysection{Fp\+Cam.\+h}
+\label{_fp_cam_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/FpCam.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/FpCam.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{keyword}{struct }GLFWwindow;}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_fp_cam}{FpCam}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 \textcolor{keyword}{public}:}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_fp_cam}{FpCam}}(GLFWwindow*);}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     glm::mat4 getMatrix();}
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} update(GLFWwindow*);}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     glm::vec3 position = glm::vec3(0, -\/100, 100);}
+\DoxyCodeLine{16     glm::vec2 rotation = glm::vec2(0, 180);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} move(\textcolor{keywordtype}{float} angle, \textcolor{keywordtype}{float} fac, \textcolor{keywordtype}{bool} backwards);}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 }
+
+\end{DoxyCode}

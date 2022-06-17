@@ -1,0 +1,52 @@
+\hypertarget{imgui__impl__glfw_8h_source}{}\doxysection{imgui\+\_\+impl\+\_\+glfw.\+h}
+\label{imgui__impl__glfw_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/imgui\_impl\_glfw.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/imgui\_impl\_glfw.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// dear imgui: Platform Backend for GLFW}}
+\DoxyCodeLine{2 \textcolor{comment}{// This needs to be used along with a Renderer (e.g. OpenGL3, Vulkan, WebGPU..)}}
+\DoxyCodeLine{3 \textcolor{comment}{// (Info: GLFW is a cross-\/platform general purpose library for handling windows, inputs, OpenGL/Vulkan graphics context creation, etc.)}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{// Implemented features:}}
+\DoxyCodeLine{6 \textcolor{comment}{//  [X] Platform: Clipboard support.}}
+\DoxyCodeLine{7 \textcolor{comment}{//  [X] Platform: Keyboard support. Since 1.87 we are using the io.AddKeyEvent() function. Pass ImGuiKey values to all key functions e.g. ImGui::IsKeyPressed(ImGuiKey\_Space). [Legacy GLFW\_KEY\_* values will also be supported unless IMGUI\_DISABLE\_OBSOLETE\_KEYIO is set]}}
+\DoxyCodeLine{8 \textcolor{comment}{//  [X] Platform: Gamepad support. Enable with 'io.ConfigFlags |= ImGuiConfigFlags\_NavEnableGamepad'.}}
+\DoxyCodeLine{9 \textcolor{comment}{//  [X] Platform: Mouse cursor shape and visibility. Disable with 'io.ConfigFlags |= ImGuiConfigFlags\_NoMouseCursorChange' (note: the resizing cursors requires GLFW 3.4+).}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// You can use unmodified imgui\_impl\_* files in your project. See examples/ folder for examples of using this.}}
+\DoxyCodeLine{12 \textcolor{comment}{// Prefer including the entire imgui/ repository into your project (either as a copy or as a submodule), and only build the backends you need.}}
+\DoxyCodeLine{13 \textcolor{comment}{// If you are new to Dear ImGui, read documentation from the docs/ folder + read the top of imgui.cpp.}}
+\DoxyCodeLine{14 \textcolor{comment}{// Read online: https://github.com/ocornut/imgui/tree/master/docs}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// About GLSL version:}}
+\DoxyCodeLine{17 \textcolor{comment}{// The 'glsl\_version' initialization parameter defaults to "{}\#version 150"{} if NULL.}}
+\DoxyCodeLine{18 \textcolor{comment}{// Only override if your GL version doesn't handle this GLSL version. Keep NULL if unsure!}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}imgui.h"{}}      \textcolor{comment}{// IMGUI\_IMPL\_API}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{struct }GLFWwindow;}
+\DoxyCodeLine{24 \textcolor{keyword}{struct }GLFWmonitor;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 IMGUI\_IMPL\_API \textcolor{keywordtype}{bool}     ImGui\_ImplGlfw\_InitForOpenGL(GLFWwindow* window, \textcolor{keywordtype}{bool} install\_callbacks);}
+\DoxyCodeLine{27 IMGUI\_IMPL\_API \textcolor{keywordtype}{bool}     ImGui\_ImplGlfw\_InitForVulkan(GLFWwindow* window, \textcolor{keywordtype}{bool} install\_callbacks);}
+\DoxyCodeLine{28 IMGUI\_IMPL\_API \textcolor{keywordtype}{bool}     ImGui\_ImplGlfw\_InitForOther(GLFWwindow* window, \textcolor{keywordtype}{bool} install\_callbacks);}
+\DoxyCodeLine{29 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_Shutdown();}
+\DoxyCodeLine{30 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_NewFrame();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// GLFW callbacks (installer)}}
+\DoxyCodeLine{33 \textcolor{comment}{// -\/ When calling Init with 'install\_callbacks=true': ImGui\_ImplGlfw\_InstallCallbacks() is called. GLFW callbacks will be installed for you. They will chain-\/call user's previously installed callbacks, if any.}}
+\DoxyCodeLine{34 \textcolor{comment}{// -\/ When calling Init with 'install\_callbacks=false': GLFW callbacks won't be installed. You will need to call individual function yourself from your own GLFW callbacks.}}
+\DoxyCodeLine{35 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_InstallCallbacks(GLFWwindow* window);}
+\DoxyCodeLine{36 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_RestoreCallbacks(GLFWwindow* window);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{// GLFW callbacks (individual callbacks to call if you didn't install callbacks)}}
+\DoxyCodeLine{39 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_WindowFocusCallback(GLFWwindow* window, \textcolor{keywordtype}{int} focused);        \textcolor{comment}{// Since 1.84}}
+\DoxyCodeLine{40 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_CursorEnterCallback(GLFWwindow* window, \textcolor{keywordtype}{int} entered);        \textcolor{comment}{// Since 1.84}}
+\DoxyCodeLine{41 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_CursorPosCallback(GLFWwindow* window, \textcolor{keywordtype}{double} x, \textcolor{keywordtype}{double} y);   \textcolor{comment}{// Since 1.87}}
+\DoxyCodeLine{42 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_MouseButtonCallback(GLFWwindow* window, \textcolor{keywordtype}{int} button, \textcolor{keywordtype}{int} action, \textcolor{keywordtype}{int} mods);}
+\DoxyCodeLine{43 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_ScrollCallback(GLFWwindow* window, \textcolor{keywordtype}{double} xoffset, \textcolor{keywordtype}{double} yoffset);}
+\DoxyCodeLine{44 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_KeyCallback(GLFWwindow* window, \textcolor{keywordtype}{int} key, \textcolor{keywordtype}{int} scancode, \textcolor{keywordtype}{int} action, \textcolor{keywordtype}{int} mods);}
+\DoxyCodeLine{45 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_CharCallback(GLFWwindow* window, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} c);}
+\DoxyCodeLine{46 IMGUI\_IMPL\_API \textcolor{keywordtype}{void}     ImGui\_ImplGlfw\_MonitorCallback(GLFWmonitor* monitor, \textcolor{keywordtype}{int} event);}
+
+\end{DoxyCode}

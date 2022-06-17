@@ -1,0 +1,274 @@
+\hypertarget{classtigl_1_1_shader_impl}{}\doxysection{tigl\+::Shader\+Impl Class Reference}
+\label{classtigl_1_1_shader_impl}\index{tigl::ShaderImpl@{tigl::ShaderImpl}}
+Inheritance diagram for tigl\+::Shader\+Impl\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtigl_1_1_shader_impl}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a1a03b4b37156ac18a5c5aa89558906ee}\label{classtigl_1_1_shader_impl_a1a03b4b37156ac18a5c5aa89558906ee}} 
+void {\bfseries use} ()
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a8b0e6181d230da105cc123d5b69a8058}{set\+Projection\+Matrix}} (const glm\+::mat4 \&matrix)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a3920174261ea3e3725050104922a723b}{set\+View\+Matrix}} (const glm\+::mat4 \&matrix)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a91c746b682944bbdf254930f5c952ba8}{set\+Model\+Matrix}} (const glm\+::mat4 \&matrix)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a27bc8d60eb739df7a6ff4707797038c4}{enable\+Color}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a7f96332516bbedb64411447b2ec7ff11}{enable\+Texture}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_aeac59a81f314f00de300938968facebb}{enable\+Lighting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a7b9d68bd9318f8e07269a4e30fc596b4}{set\+Light\+Count}} (int count)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_aaa8c36fde2e79d523c74084f018c369b}{set\+Light\+Directional}} (int light\+Nr, bool is\+Directional)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a53ac9f3fed61c4aaaf3a071eefc3aacf}{set\+Light\+Position}} (int light\+Nr, const glm\+::vec3 \&position)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a5ee41adcd3141369e93459b264f77c3a}{set\+Light\+Ambient}} (int light\+Nr, const glm\+::vec3 \&color)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_ae25c9e0b40cdf688e8cb5bd6dc1d8876}{set\+Light\+Diffuse}} (int light\+Nr, const glm\+::vec3 \&color)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_abfd714656b11c300a9a825746a991790}{set\+Light\+Specular}} (int light\+Nr, const glm\+::vec3 \&color)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_ad651e627d3a5fd80f532b7a2fd35c7f8}{set\+Shinyness}} (float shinyness)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a9a6585fd8aabe3a885964c9172b56ebf}{enable\+Color\+Mult}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_ac645865880194ca872a21241c96cff63}{set\+Color\+Mult}} (const glm\+::vec4 \&color)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_ad68b9395a75107a627df2ca8dfa1b9dd}{enable\+Alpha\+Test}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_ab7319a244d055f2d37d6067be3f02d70}{enable\+Fog}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a4985c53d8298580352193f5c21223c8f}{set\+Fog\+Linear}} (float begin, float end)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_a05207af184ae93d5f4eb25ae8f9735af}{set\+Fog\+Exp}} (float density)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_aa82b9ae317f567715df24f00add816b5}{set\+Fog\+Exp2}} (float density)
+\item 
+void \mbox{\hyperlink{classtigl_1_1_shader_impl_aa4852fc6ba6d53240db927b5f01c81b9}{set\+Fog\+Color}} (const glm\+::vec3 \&color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_ad68b9395a75107a627df2ca8dfa1b9dd}\label{classtigl_1_1_shader_impl_ad68b9395a75107a627df2ca8dfa1b9dd}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableAlphaTest@{enableAlphaTest}}
+\index{enableAlphaTest@{enableAlphaTest}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableAlphaTest()}{enableAlphaTest()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Alpha\+Test (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a27bc8d60eb739df7a6ff4707797038c4}\label{classtigl_1_1_shader_impl_a27bc8d60eb739df7a6ff4707797038c4}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableColor@{enableColor}}
+\index{enableColor@{enableColor}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableColor()}{enableColor()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Color (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a9a6585fd8aabe3a885964c9172b56ebf}\label{classtigl_1_1_shader_impl_a9a6585fd8aabe3a885964c9172b56ebf}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableColorMult@{enableColorMult}}
+\index{enableColorMult@{enableColorMult}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableColorMult()}{enableColorMult()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Color\+Mult (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_ab7319a244d055f2d37d6067be3f02d70}\label{classtigl_1_1_shader_impl_ab7319a244d055f2d37d6067be3f02d70}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableFog@{enableFog}}
+\index{enableFog@{enableFog}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableFog()}{enableFog()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Fog (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_aeac59a81f314f00de300938968facebb}\label{classtigl_1_1_shader_impl_aeac59a81f314f00de300938968facebb}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableLighting@{enableLighting}}
+\index{enableLighting@{enableLighting}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableLighting()}{enableLighting()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Lighting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a7f96332516bbedb64411447b2ec7ff11}\label{classtigl_1_1_shader_impl_a7f96332516bbedb64411447b2ec7ff11}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!enableTexture@{enableTexture}}
+\index{enableTexture@{enableTexture}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{enableTexture()}{enableTexture()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::enable\+Texture (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_ac645865880194ca872a21241c96cff63}\label{classtigl_1_1_shader_impl_ac645865880194ca872a21241c96cff63}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setColorMult@{setColorMult}}
+\index{setColorMult@{setColorMult}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setColorMult()}{setColorMult()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Color\+Mult (\begin{DoxyParamCaption}\item[{const glm\+::vec4 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_aa4852fc6ba6d53240db927b5f01c81b9}\label{classtigl_1_1_shader_impl_aa4852fc6ba6d53240db927b5f01c81b9}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setFogColor@{setFogColor}}
+\index{setFogColor@{setFogColor}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setFogColor()}{setFogColor()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Fog\+Color (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a05207af184ae93d5f4eb25ae8f9735af}\label{classtigl_1_1_shader_impl_a05207af184ae93d5f4eb25ae8f9735af}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setFogExp@{setFogExp}}
+\index{setFogExp@{setFogExp}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setFogExp()}{setFogExp()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Fog\+Exp (\begin{DoxyParamCaption}\item[{float}]{density }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_aa82b9ae317f567715df24f00add816b5}\label{classtigl_1_1_shader_impl_aa82b9ae317f567715df24f00add816b5}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setFogExp2@{setFogExp2}}
+\index{setFogExp2@{setFogExp2}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setFogExp2()}{setFogExp2()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Fog\+Exp2 (\begin{DoxyParamCaption}\item[{float}]{density }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a4985c53d8298580352193f5c21223c8f}\label{classtigl_1_1_shader_impl_a4985c53d8298580352193f5c21223c8f}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setFogLinear@{setFogLinear}}
+\index{setFogLinear@{setFogLinear}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setFogLinear()}{setFogLinear()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Fog\+Linear (\begin{DoxyParamCaption}\item[{float}]{begin,  }\item[{float}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a5ee41adcd3141369e93459b264f77c3a}\label{classtigl_1_1_shader_impl_a5ee41adcd3141369e93459b264f77c3a}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightAmbient@{setLightAmbient}}
+\index{setLightAmbient@{setLightAmbient}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightAmbient()}{setLightAmbient()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Ambient (\begin{DoxyParamCaption}\item[{int}]{light\+Nr,  }\item[{const glm\+::vec3 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a7b9d68bd9318f8e07269a4e30fc596b4}\label{classtigl_1_1_shader_impl_a7b9d68bd9318f8e07269a4e30fc596b4}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightCount@{setLightCount}}
+\index{setLightCount@{setLightCount}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightCount()}{setLightCount()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Count (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_ae25c9e0b40cdf688e8cb5bd6dc1d8876}\label{classtigl_1_1_shader_impl_ae25c9e0b40cdf688e8cb5bd6dc1d8876}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightDiffuse@{setLightDiffuse}}
+\index{setLightDiffuse@{setLightDiffuse}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightDiffuse()}{setLightDiffuse()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Diffuse (\begin{DoxyParamCaption}\item[{int}]{light\+Nr,  }\item[{const glm\+::vec3 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_aaa8c36fde2e79d523c74084f018c369b}\label{classtigl_1_1_shader_impl_aaa8c36fde2e79d523c74084f018c369b}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightDirectional@{setLightDirectional}}
+\index{setLightDirectional@{setLightDirectional}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightDirectional()}{setLightDirectional()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Directional (\begin{DoxyParamCaption}\item[{int}]{light\+Nr,  }\item[{bool}]{is\+Directional }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a53ac9f3fed61c4aaaf3a071eefc3aacf}\label{classtigl_1_1_shader_impl_a53ac9f3fed61c4aaaf3a071eefc3aacf}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightPosition@{setLightPosition}}
+\index{setLightPosition@{setLightPosition}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightPosition()}{setLightPosition()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Position (\begin{DoxyParamCaption}\item[{int}]{light\+Nr,  }\item[{const glm\+::vec3 \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_abfd714656b11c300a9a825746a991790}\label{classtigl_1_1_shader_impl_abfd714656b11c300a9a825746a991790}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setLightSpecular@{setLightSpecular}}
+\index{setLightSpecular@{setLightSpecular}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setLightSpecular()}{setLightSpecular()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Light\+Specular (\begin{DoxyParamCaption}\item[{int}]{light\+Nr,  }\item[{const glm\+::vec3 \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a91c746b682944bbdf254930f5c952ba8}\label{classtigl_1_1_shader_impl_a91c746b682944bbdf254930f5c952ba8}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setModelMatrix@{setModelMatrix}}
+\index{setModelMatrix@{setModelMatrix}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setModelMatrix()}{setModelMatrix()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Model\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a8b0e6181d230da105cc123d5b69a8058}\label{classtigl_1_1_shader_impl_a8b0e6181d230da105cc123d5b69a8058}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setProjectionMatrix@{setProjectionMatrix}}
+\index{setProjectionMatrix@{setProjectionMatrix}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setProjectionMatrix()}{setProjectionMatrix()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_ad651e627d3a5fd80f532b7a2fd35c7f8}\label{classtigl_1_1_shader_impl_ad651e627d3a5fd80f532b7a2fd35c7f8}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setShinyness@{setShinyness}}
+\index{setShinyness@{setShinyness}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setShinyness()}{setShinyness()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+Shinyness (\begin{DoxyParamCaption}\item[{float}]{shinyness }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+\mbox{\Hypertarget{classtigl_1_1_shader_impl_a3920174261ea3e3725050104922a723b}\label{classtigl_1_1_shader_impl_a3920174261ea3e3725050104922a723b}} 
+\index{tigl::ShaderImpl@{tigl::ShaderImpl}!setViewMatrix@{setViewMatrix}}
+\index{setViewMatrix@{setViewMatrix}!tigl::ShaderImpl@{tigl::ShaderImpl}}
+\doxysubsubsection{\texorpdfstring{setViewMatrix()}{setViewMatrix()}}
+{\footnotesize\ttfamily void tigl\+::\+Shader\+Impl\+::set\+View\+Matrix (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classtigl_1_1internal_1_1_shader}{tigl\+::internal\+::\+Shader}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+F\+:/\+Technische Informatica/\+One\+Drive -\/ Avans Hogeschool/\+GIT projects/\+TI24\+\_\+3dg\+\_\+\+World\+Builder/3dg\+\_\+\+Worldbuilder/tigl.\+cpp\end{DoxyCompactItemize}

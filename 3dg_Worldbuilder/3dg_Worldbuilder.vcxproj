@@ -164,10 +164,10 @@
     <ClCompile Include="lib\imgui-1.87\imgui_impl_opengl3.cpp" />
     <ClCompile Include="lib\imgui-1.87\imgui_tables.cpp" />
     <ClCompile Include="lib\imgui-1.87\imgui_widgets.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="Object3d.cpp" />
     <ClCompile Include="ObjectLight.cpp" />
-    <ClCompile Include="ObjModel.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\ObjModel.cpp" />
     <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="tigl.cpp" />
@@ -191,7 +191,7 @@
     <ClInclude Include="lib\imgui-1.87\imstb_truetype.h" />
     <ClInclude Include="Object3d.h" />
     <ClInclude Include="ObjectLight.h" />
-    <ClInclude Include="ObjModel.h" />
+    <ClInclude Include="source\ObjModel.h" />
     <ClInclude Include="StaticSettings.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="StringUtil.h" />
@@ -204,7 +204,7 @@
     <ClInclude Include="WorldObject.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="imgui.ini" />
+    <None Include="source\imgui.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,30 @@
+\hypertarget{_world_object_8h_source}{}\doxysection{World\+Object.\+h}
+\label{_world_object_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/WorldObject.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/WorldObject.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <glm/ext/vector\_float3.hpp>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Transform.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_world_object}{WorldObject}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 \textcolor{keyword}{private}:}
+\DoxyCodeLine{9     \mbox{\hyperlink{struct_transform}{Transform}}* transform = \textcolor{keyword}{new} \mbox{\hyperlink{struct_transform}{Transform}};}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{public}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_world_object}{WorldObject}}();}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     std::string name;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \mbox{\hyperlink{struct_transform}{Transform}}* GetTransform();}
+\DoxyCodeLine{18     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Init() \{\};}
+\DoxyCodeLine{19     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Draw() \{\};}
+\DoxyCodeLine{20     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} Update() \{\};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \mbox{\hyperlink{class_world_object}{\string~WorldObject}}();}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+
+\end{DoxyCode}

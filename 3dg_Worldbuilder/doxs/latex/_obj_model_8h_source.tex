@@ -1,0 +1,69 @@
+\hypertarget{_obj_model_8h_source}{}\doxysection{Obj\+Model.\+h}
+\label{_obj_model_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/ObjModel.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/ObjModel.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <GL/glew.h>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <glm/glm.hpp>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}VBOModel.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_texture}{Texture}};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_obj_model}{ObjModel}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18     \textcolor{keyword}{class }Vertex}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \textcolor{keywordtype}{int} position;}
+\DoxyCodeLine{22         \textcolor{keywordtype}{int} normal;}
+\DoxyCodeLine{23         \textcolor{keywordtype}{int} texcoord; }
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \textcolor{keyword}{class }Face}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28     \textcolor{keyword}{public}:}
+\DoxyCodeLine{29         std::list<Vertex> vertices;}
+\DoxyCodeLine{30     \};}
+\DoxyCodeLine{31     \textcolor{keyword}{class }MaterialInfo}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33     \textcolor{keyword}{public}:}
+\DoxyCodeLine{34         MaterialInfo();}
+\DoxyCodeLine{35         std::string name;}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_texture}{Texture}}* texture;}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{keyword}{class }ObjGroup}
+\DoxyCodeLine{40     \{}
+\DoxyCodeLine{41     \textcolor{keyword}{public}:}
+\DoxyCodeLine{42         std::string name;}
+\DoxyCodeLine{43         \textcolor{keywordtype}{int} materialIndex;}
+\DoxyCodeLine{44         std::list<Face> faces;}
+\DoxyCodeLine{45     \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     std::vector<glm::vec3>  vertices;}
+\DoxyCodeLine{49     std::vector<glm::vec3>  normals;}
+\DoxyCodeLine{50     std::vector<glm::vec2>  texcoords;}
+\DoxyCodeLine{51     std::vector<ObjGroup*> groups;}
+\DoxyCodeLine{52     std::vector<MaterialInfo*> materials;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} loadMaterialFile(\textcolor{keyword}{const} std::string \&fileName, \textcolor{keyword}{const} std::string \&dirName);}
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56     \mbox{\hyperlink{class_obj_model_aead7c4e003551163aea899fef71ce2f7}{ObjModel}}(\textcolor{keyword}{const} std::string \&filename);}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_obj_model}{\string~ObjModel}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \mbox{\hyperlink{class_v_b_o_model}{VBOModel}}* ToVBOModel();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+
+\end{DoxyCode}

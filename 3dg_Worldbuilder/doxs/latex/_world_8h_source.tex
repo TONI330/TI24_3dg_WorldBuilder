@@ -1,0 +1,54 @@
+\hypertarget{_world_8h_source}{}\doxysection{World.\+h}
+\label{_world_8h_source}\index{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/World.h@{F:/Technische Informatica/OneDrive -\/ Avans Hogeschool/GIT projects/TI24\_3dg\_WorldBuilder/3dg\_Worldbuilder/World.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}WorldObject.h"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <GL/glew.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}tigl.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}FpCam.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{class_world}{World}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{float} time;}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_fp_cam}{FpCam}}\& camera;}
+\DoxyCodeLine{16     GLFWwindow\& window;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} lightCount = 0;}
+\DoxyCodeLine{18     }
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} RotateAround(glm::vec3 center, glm::vec3 target, \textcolor{keywordtype}{float} angle\_radians);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22     std::vector<WorldObject *> objects;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \mbox{\hyperlink{class_world}{World}}(GLFWwindow\& window, \mbox{\hyperlink{class_fp_cam}{FpCam}}\& camera);}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} AddWorldObject(\mbox{\hyperlink{class_world_object}{WorldObject}}* \textcolor{keywordtype}{object});}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} UpdateWorld();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} DrawWorld();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{class_world_object}{WorldObject}}* FindObjectById(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{32     std::vector<T*> GetWorldObjects()}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34         std::vector<T*> found;}
+\DoxyCodeLine{35         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} \textcolor{keywordtype}{object} : objects)}
+\DoxyCodeLine{36         \{}
+\DoxyCodeLine{37             \textcolor{keyword}{auto} derived = \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(object);}
+\DoxyCodeLine{38             \textcolor{keywordflow}{if} (derived)}
+\DoxyCodeLine{39                 found.push\_back(derived);}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41         \textcolor{keywordflow}{return} found;}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_world}{\string~World}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \};}
+
+\end{DoxyCode}
