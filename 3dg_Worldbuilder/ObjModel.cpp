@@ -6,6 +6,7 @@
 #include "tigl.h"
 #include "Texture.h"
 #include "StaticSettings.h"
+#include "StringUtil.h"
 
 using tigl::Vertex;
 
@@ -49,12 +50,12 @@ ObjModel::ObjModel(const std::string &fileName)
 	{
 		std::string line;
 		std::getline(pFile, line);
-		line = cleanLine(line);
+		line = StringUtil::cleanLine(line);
 		if(line == "" || line[0] == '#') //skip empty or commented line
 			continue;
 
-		std::vector<std::string> params = split(line, " ");
-		params[0] = toLower(params[0]);
+		std::vector<std::string> params = StringUtil::split(line, " ");
+		params[0] = StringUtil::toLower(params[0]);
 
 		if(params[0] == "v")
 			vertices.push_back(glm::vec3((float)atof(params[1].c_str()), (float)atof(params[2].c_str()), (float)atof(params[3].c_str())));
@@ -71,7 +72,7 @@ ObjModel::ObjModel(const std::string &fileName)
 				for(size_t i = ii-3; i < ii; i++)	//magische forlus om van quads triangles te maken ;)
 				{
 					Vertex vertex;
-					std::vector<std::string> indices = split(params[i == (ii-3) ? 1 : i], "/");
+					std::vector<std::string> indices = StringUtil::split(params[i == (ii-3) ? 1 : i], "/");
 					if (indices.size() >= 1)	//er is een positie
 						vertex.position = atoi(indices[0].c_str()) - 1;
 					if(indices.size() == 2)		//alleen texture
@@ -192,12 +193,12 @@ void ObjModel::loadMaterialFile( const std::string &fileName, const std::string 
 	{
 		std::string line;
 		std::getline(pFile, line);
-		line = cleanLine(line);
+		line = StringUtil::cleanLine(line);
 		if(line == "" || line[0] == '#')
 			continue;
 
-		std::vector<std::string> params = split(line, " ");
-		params[0] = toLower(params[0]);
+		std::vector<std::string> params = StringUtil::split(line, " ");
+		params[0] = StringUtil::toLower(params[0]);
 
 		if(params[0] == "newmtl")
 		{
