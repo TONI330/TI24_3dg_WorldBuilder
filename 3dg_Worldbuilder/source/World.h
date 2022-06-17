@@ -15,8 +15,6 @@ private:
 	FpCam& camera;
 	GLFWwindow& window;
 	int lightCount = 0;
-	
-	void RotateAround(glm::vec3 center, glm::vec3 target, float angle_radians);
 
 public:
 	std::vector<WorldObject *> objects;
@@ -40,8 +38,6 @@ public:
 		}
 		return found;
 	}
-
-	
 
 	~World();
 

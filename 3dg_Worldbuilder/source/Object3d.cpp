@@ -5,7 +5,6 @@
 #include "tigl.h"
 #include "Transform.h"
 
-
 glm::mat4 Object3d::TransToModel(const Transform& transform)
 {
 	auto modelMatrix = glm::mat4(1.0f);
@@ -60,11 +59,8 @@ void Object3d::Draw()
 	
 	mesh->draw();
 
-#if DEBUG_LEVEL == 0
-	//std::cout << "position x: " << this->GetTransform().position;
+#if DEBUG_LEVEL == DEBUG_LEVEL_VERBOSE
+	std::cout << "position x: " << this->GetTransform().position;
 #endif
 
-
-
-	
 }

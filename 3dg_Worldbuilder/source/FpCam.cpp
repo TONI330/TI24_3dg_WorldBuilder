@@ -10,7 +10,6 @@ FpCam::FpCam(GLFWwindow* window)
 		glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 }
 
-
 glm::mat4 FpCam::getMatrix()
 {
 	glm::mat4 ret(1.0f);
@@ -42,7 +41,6 @@ void FpCam::update(GLFWwindow* window)
 
 	lastX = x;
 	lastY = y;
-
 
 	if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
 		move(0, MOVEMENT_SPEED, false);

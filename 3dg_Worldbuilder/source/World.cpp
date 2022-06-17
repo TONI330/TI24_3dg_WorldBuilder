@@ -5,19 +5,6 @@
 #include "WorldFactory.h"
 #include "ObjectLight.h"
 
-void World::RotateAround(glm::vec3 center, glm::vec3 target, float angle_radians)
-{
-    float x1 = target.x - center.x;
-    float y1 = target.y - center.y;
-    float z1 = target.z - center.z;
-
-    float x2 = x1 * glm::cos(angle_radians) - y1 * glm::sin(angle_radians);
-    float y2 = x1 * glm::sin(angle_radians) + y1 * glm::cos(angle_radians);
-
-    target.x = x2 + center.x;
-    target.y = y2 + center.y;
-}
-
 World::World(GLFWwindow& window, FpCam& camera) : window(window), camera(camera)
 {
     time = 0;
@@ -95,7 +82,7 @@ void World::DrawWorld()
     auto sunTransform = this->GetWorldObjects<Object3d>()[0]->GetTransform()->position;
     tigl::shader->setLightPosition(0, sunTransform);
 
-#if DEBUG_LEVEL == 0
+#if DEBUG_LEVEL == DEBUG_LEVEL_VERBOSE
     std::cout << "angle: " << sunAngle << std::endl;
 #endif
     
@@ -103,7 +90,7 @@ void World::DrawWorld()
     {
         worldObject->Draw();
         tigl::shader->setLightDiffuse(0, glm::vec3(1.0f, 1.0f, 1.0f));
-#if DEBUG_LEVEL == 0
+#if DEBUG_LEVEL == DEBUG_LEVEL_VERBOSE
         std::cout << worldObject->name << std::endl;
 #endif
     }

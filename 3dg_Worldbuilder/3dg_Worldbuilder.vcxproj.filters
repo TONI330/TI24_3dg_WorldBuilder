@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="WorldResources">
-      <UniqueIdentifier>{4c829b36-4880-4026-a952-0717bc08c76c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="WorldResources\Objects">
-      <UniqueIdentifier>{aec80ebb-3cd6-42cb-abb2-8541901cbe79}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{8d6ef657-89f6-4d6f-9e48-3685043ccee5}</UniqueIdentifier>
     </Filter>
@@ -20,8 +10,14 @@
     <Filter Include="Libs\imgui">
       <UniqueIdentifier>{ce6bbcc1-8f8c-4ab3-842d-9bc6b8588ed0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="WorldManagement">
+    <Filter Include="Main\WorldManagement">
       <UniqueIdentifier>{a69c9043-a264-4f6f-b09d-5228db2d0520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\WorldResources">
+      <UniqueIdentifier>{4c829b36-4880-4026-a952-0717bc08c76c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\WorldResources\Objects">
+      <UniqueIdentifier>{aec80ebb-3cd6-42cb-abb2-8541901cbe79}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,25 +45,22 @@
     <ClCompile Include="source\ObjModel.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="source\EditGUI.cpp" />
     <ClCompile Include="source\ObjectLight.cpp">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClCompile>
     <ClCompile Include="source\World.cpp">
-      <Filter>WorldResources</Filter>
+      <Filter>Main\WorldResources</Filter>
     </ClCompile>
     <ClCompile Include="source\StringUtil.cpp" />
-    <ClCompile Include="source\Transform.cpp" />
     <ClCompile Include="source\VBOModel.cpp" />
-    <ClCompile Include="source\WorldFactory.cpp" />
     <ClCompile Include="source\WorldObject.cpp">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClCompile>
     <ClCompile Include="source\FpCam.cpp">
-      <Filter>WorldManagement</Filter>
+      <Filter>Main\WorldManagement</Filter>
     </ClCompile>
     <ClCompile Include="source\Object3d.cpp">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClCompile>
     <ClCompile Include="source\Texture.cpp">
       <Filter>Main</Filter>
@@ -77,6 +70,12 @@
     </ClCompile>
     <ClCompile Include="lib\imgui-1.87\imgui_impl_opengl3.cpp">
       <Filter>Libs\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorldFactory.cpp">
+      <Filter>Main\WorldResources</Filter>
+    </ClCompile>
+    <ClCompile Include="source\EditGUI.cpp">
+      <Filter>Main\WorldManagement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -107,25 +106,23 @@
     <ClInclude Include="source\ObjModel.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="source\EditGUI.h" />
     <ClInclude Include="source\ObjectLight.h">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="source\World.h">
-      <Filter>WorldResources</Filter>
+      <Filter>Main\WorldResources</Filter>
     </ClInclude>
     <ClInclude Include="source\StringUtil.h" />
     <ClInclude Include="source\Transform.h" />
     <ClInclude Include="source\VBOModel.h" />
-    <ClInclude Include="source\WorldFactory.h" />
     <ClInclude Include="source\WorldObject.h">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="source\FpCam.h">
-      <Filter>WorldManagement</Filter>
+      <Filter>Main\WorldManagement</Filter>
     </ClInclude>
     <ClInclude Include="source\Object3d.h">
-      <Filter>WorldResources\Objects</Filter>
+      <Filter>Main\WorldResources\Objects</Filter>
     </ClInclude>
     <ClInclude Include="source\Texture.h">
       <Filter>Main</Filter>
@@ -141,6 +138,12 @@
     </ClInclude>
     <ClInclude Include="lib\imgui-1.87\imgui_impl_opengl3.h">
       <Filter>Libs\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorldFactory.h">
+      <Filter>Main\WorldResources</Filter>
+    </ClInclude>
+    <ClInclude Include="source\EditGUI.h">
+      <Filter>Main\WorldManagement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

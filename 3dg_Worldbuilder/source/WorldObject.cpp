@@ -14,5 +14,5 @@ Transform* WorldObject::GetTransform()
 
 WorldObject::~WorldObject()
 {
-	free(this->transform);
+	delete(this->transform);
 }

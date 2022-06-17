@@ -4,7 +4,6 @@
 
 Texture::Texture(const std::string & fileName)
 {
-
     glGenTextures(1, &id);
     glBindTexture(GL_TEXTURE_2D, id);
 
@@ -23,7 +22,6 @@ Texture::Texture(const std::string & fileName)
         imgData);		//data
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
 }
 
 void Texture::bind()

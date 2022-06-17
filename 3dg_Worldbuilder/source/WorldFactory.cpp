@@ -12,7 +12,7 @@ WorldObject* WorldFactory::GetWorldObject(std::string line)
     {
         if(StringUtil::IndexOf(params, "m=") != -1)
             return new Object3d(params[StringUtil::IndexOf(params, "m=") + 1]);
-#if DEBUG_LEVEL <= 3
+#if DEBUG_LEVEL <= DEBUG_LEVEL_ERROR
         std::cout << "3d object in save file has no mesh";
 #endif
     }
@@ -24,7 +24,7 @@ std::vector<WorldObject*> WorldFactory::LoadWorldObjects()
     std::ifstream pFile(SAVE_FILE);
     if (!pFile.is_open())
     {
-#if DEBUG_LEVEL <= 2
+#if DEBUG_LEVEL <= DEBUG_LEVEL_WARNING
         std::cout << "Save file not found, creating empty world";
 #endif
         return objects;

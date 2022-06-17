@@ -10,16 +10,12 @@
 
 using tigl::Vertex;
 
-
-
-
-
 /**
 * Loads an object model
 */
 ObjModel::ObjModel(const std::string &fileName)
 {
-#if DEBUG_LEVEL <= 1
+#if DEBUG_LEVEL <= DEBUG_LEVEL_INFO
 	std::cout << "Loading " << fileName << std::endl;
 #endif
 	std::string dirName = fileName;
@@ -35,12 +31,11 @@ ObjModel::ObjModel(const std::string &fileName)
 
 	if (!pFile.is_open())
 	{
-#if DEBUG_LEVEL <= 3
+#if DEBUG_LEVEL <= DEBUG_LEVEL_ERROR
 		std::cout << "Could not open file " << fileName << std::endl;
 #endif
 		return;
 	}
-
 
 	ObjGroup* currentGroup = new ObjGroup();
 	currentGroup->materialIndex = -1;
@@ -112,16 +107,14 @@ ObjModel::ObjModel(const std::string &fileName)
 				}
 			}
 			if (currentGroup->materialIndex == -1) {
-#if DEBUG_LEVEL <= 3
+#if DEBUG_LEVEL <= DEBUG_LEVEL_ERROR
 				std::cout << "Could not find material name " << params[1] << std::endl;
 #endif
 			}
-
 		}
 	}
 	groups.push_back(currentGroup);
 }
-
 
 ObjModel::~ObjModel(void)
 {
@@ -150,12 +143,6 @@ VBOModel* ObjModel::ToVBOModel()
 
 void ObjModel::draw()
 {
-	//foreach group in groups
-	//  set material texture, if available
-	//  set material color, if available
-	//  foreach face in group
-	//    foreach vertex in face
-	//      emit vertex
 	std::vector<tigl::Vertex> vertexList;
 	for (const auto group : groups) 
 	{
@@ -174,7 +161,7 @@ void ObjModel::draw()
 
 void ObjModel::loadMaterialFile( const std::string &fileName, const std::string &dirName )
 {
-#if DEBUG_LEVEL <= 1
+#if DEBUG_LEVEL <= DEBUG_LEVEL_INFO
 	std::cout << "Loading " << fileName << std::endl;
 #endif
 	std::ifstream pFile(fileName.c_str());
@@ -183,10 +170,8 @@ void ObjModel::loadMaterialFile( const std::string &fileName, const std::string 
 #if DEBUG <= 2
 		std::cout << "Could not open file " << fileName << std::endl;
 #endif
-		
 		return;
 	}
-
 	MaterialInfo* currentMaterial = NULL;
 
 	while(!pFile.eof())
@@ -251,13 +236,10 @@ void ObjModel::loadMaterialFile( const std::string &fileName, const std::string 
 #if DEBUG <= 2
 			std::cout << "Didn't parse " << params[0] << " in material file" << std::endl;
 #endif
-		}
-
-			
+		}			
 	}
 	if(currentMaterial != NULL)
 		materials.push_back(currentMaterial);
-
 }
 
 ObjModel::MaterialInfo::MaterialInfo()

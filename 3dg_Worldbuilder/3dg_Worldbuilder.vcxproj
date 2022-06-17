@@ -171,7 +171,6 @@
     <ClCompile Include="source\StringUtil.cpp" />
     <ClCompile Include="source\Texture.cpp" />
     <ClCompile Include="source\tigl.cpp" />
-    <ClCompile Include="source\Transform.cpp" />
     <ClCompile Include="source\VBOModel.cpp" />
     <ClCompile Include="source\World.cpp" />
     <ClCompile Include="source\WorldFactory.cpp" />
